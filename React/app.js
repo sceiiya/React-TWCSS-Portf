@@ -20,5 +20,6 @@ const title = React.createElement(
 
 ReactDOM.render(
     title,
+    // $('#root')
     document.getElementById('root')
 );
