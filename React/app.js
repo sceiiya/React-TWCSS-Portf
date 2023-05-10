@@ -11,11 +11,22 @@
 // const root = createRoot(document.getElementById('app'));
 // root.render(<h1>Hello, world</h1>);
 
+const paragraph = React.createElement(
+    'p',
+    {id: 'first-p'},
+    'My First React Element!'
+);
+
+const span = React.createElement(
+    'span',
+    {id: 'p-container'},
+    paragraph,
+);
 
 const title = React.createElement(
     'h1',
     {id: 'main-title', title: 'test-title'},
-    'My First React Element!'
+    span
 );
 
 ReactDOM.render(
