@@ -39,16 +39,16 @@
 // Test of jsx
 // }
 
-const title = (
+const Title = () => 
 <header>
     <span>
         <h1>Sceiiya Used </h1>
         <p>My First React Element!</p>
     </span>
 </header>
-);
+;
 
 ReactDOM.render(
-    title,
+    <Title />,
     document.getElementById('root')
 );
