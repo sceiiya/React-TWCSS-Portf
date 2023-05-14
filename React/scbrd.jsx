@@ -1,9 +1,9 @@
 // import 'index.css';
 
-const Header = () => 
+const Header = (p) => 
 <header id="head" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1>Scoreboard</h1>
-    <span className="stats">Players: 1</span>
+    <h1>{p.title}</h1>
+    <span className="stats">Players: {p.tPlayers}</span>
 </header>
 ;
 
@@ -31,7 +31,7 @@ const Counter = () =>{
 const App = () =>{
     return(
         <div className="counter">
-            <Header />
+            <Header title='Scoreboard' tPlayers='7'/>
 
             {/* players list */}
             <Player /> 
