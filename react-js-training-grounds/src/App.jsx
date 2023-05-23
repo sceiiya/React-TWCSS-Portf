@@ -1,35 +1,92 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from 'react';
+import Header from './components/Header';
+import Player from './components/Player';
+class App extends Component {
 
-function App() {
-  const [count, setCount] = useState(0)
+    //two types of state
+    //Application State //resusable for its children components
+    //Component State //local component state
+    state = {
+        players: [
+            {
+                id: '1',
+                name: 'una',
+                score: 0,
+            },
+            {
+                id: '2',
+                name: 'lawa',
+                score: 2,
+            },
+            {
+                id: 3,
+                name: 'san',
+                score: 0,
+            },
+            {
+                id: 4,
+                name: 'pat',
+                score: 4,
+            },
+        ]
+    };
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    // handleScoreChange = (index, delta) => {
+    //     // console.log(this.state.players[index]);
+    //     if(this.state.players[index].score == 0){
+    //         //do
+    //     }else{
+    //          //much much better factored syntax
+    //         this.setState( prevState =>({
+    //             score: prevState.players[index].score += delta
+    //         }));
+    //     }
+    //     console.log('index: '+index+' delta: '+delta);
+    // }
+
+
+    handleScoreChange = (index, delta) => {
+        this.setState(prevState => {
+          const updatedPlayers = [...prevState.players];
+          const player = updatedPlayers[index];
+          if (player.score !== 0 || delta !== -1) {
+            player.score += delta;
+          }
+          return { players: updatedPlayers };
+        });
+      }
+      
+    handleRemovePlayer = (id) =>{
+        this.setState( prevState => {
+            return{
+                players: prevState.players.filter(p => p.id !== id)
+            }
+        });
+    }
+    
+    render(){
+        return(
+          <section className='flex content-center w-full justify-center m-auto text-slate-100'>
+            <div className="counter bg-emerald-500 w-4/5 rounded-lg mt-3">
+                <Header title='Scoreboard' tPlayers={this.state.players.length}/>
+                {/* players list */}
+                {
+                    this.state.players.map( (player, index) =>
+                    <Player 
+                    id={player.id}
+                    pName={player.name}
+                    score={player.score}
+                    key={player.id.toString()}
+                    index={index}
+                    changeScore={this.handleScoreChange}
+                    removePlayer={this.handleRemovePlayer}
+                    /> 
+                    )
+                }
+            </div>
+          </section>
+        );
+    }
 }
 
-export default App
+export default App;
