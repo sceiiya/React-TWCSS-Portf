@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Player from './components/Player';
+import AddPlayer from './components/AddForm';
 class App extends Component {
 
     //two types of state
@@ -16,7 +17,7 @@ class App extends Component {
             {
                 id: '2',
                 name: 'lawa',
-                score: 2,
+                score: 0,
             },
             {
                 id: 3,
@@ -26,35 +27,52 @@ class App extends Component {
             {
                 id: 4,
                 name: 'pat',
-                score: 4,
+                score: 0,
             },
         ]
     };
 
+    lastPlayerID = 4;
+
     // handleScoreChange = (index, delta) => {
-    //     // console.log(this.state.players[index]);
-    //     if(this.state.players[index].score == 0){
-    //         //do
-    //     }else{
-    //          //much much better factored syntax
-    //         this.setState( prevState =>({
-    //             score: prevState.players[index].score += delta
-    //         }));
+    //     if (this.state.players[index].score === 0 && delta === -.5) {
+    //         return;
     //     }
-    //     console.log('index: '+index+' delta: '+delta);
+
+    //     this.setState( prevState =>({
+    //         score: prevState.players[index].score += delta
+    //     }));
     // }
 
-
     handleScoreChange = (index, delta) => {
+        // console.log(this.state.players[index].score);
+        // console.log('index: '+index+' delta: '+delta);
+
+        if (this.state.players[index].score <= 0 && delta <= 0) {
+            return;
+        }
+
         this.setState(prevState => {
           const updatedPlayers = [...prevState.players];
-          const player = updatedPlayers[index];
-          if (player.score !== 0 || delta !== -1) {
-            player.score += delta;
-          }
+          updatedPlayers[index] = {
+            ...updatedPlayers[index],
+            score: updatedPlayers[index].score + delta
+          };
           return { players: updatedPlayers };
         });
       }
+      
+
+    // handleScoreChange = (index, delta) => {
+    //     this.setState(prevState => {
+    //       const updatedPlayers = [...prevState.players];
+    //       const player = updatedPlayers[index];
+    //       if (player.score !== 0 || delta !== -1) {
+    //         player.score += delta;
+    //       }
+    //       return { players: updatedPlayers };
+    //     });
+    //   }
       
     handleRemovePlayer = (id) =>{
         this.setState( prevState => {
@@ -64,11 +82,28 @@ class App extends Component {
         });
     }
     
+    handleAddPlayer = (name) => {
+        this.setState( prevState =>{
+            return{
+                players: [
+                    // ...this.state.players,
+                    ...prevState.players,
+                    {
+                    id: this.lastPlayerID +=1,
+                    name,
+                    score: 0,
+                },
+                // ...prevState.players,
+            ]
+            }
+        });
+    }
+
     render(){
         return(
           <section className='flex content-center w-full justify-center m-auto text-slate-100'>
             <div className="counter bg-emerald-500 w-4/5 rounded-lg mt-3">
-                <Header title='Scoreboard' tPlayers={this.state.players.length}/>
+                <Header title='Scoreboard' Players={this.state.players}/>
                 {/* players list */}
                 {
                     this.state.players.map( (player, index) =>
@@ -83,6 +118,7 @@ class App extends Component {
                     /> 
                     )
                 }
+                <AddPlayer addPlayer={this.handleAddPlayer}/>
             </div>
           </section>
         );
