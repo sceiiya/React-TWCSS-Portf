@@ -10,12 +10,12 @@ class App extends Component {
     state = {
         players: [
             {
-                id: '1',
+                id: 1,
                 name: 'una',
                 score: 0,
             },
             {
-                id: '2',
+                id: 2,
                 name: 'lawa',
                 score: 0,
             },
@@ -32,7 +32,8 @@ class App extends Component {
         ]
     };
 
-    lastPlayerID = 4;
+    // lastPlayerID = 4;
+    lastPlayerID = this.state.players.length;
 
     // handleScoreChange = (index, delta) => {
     //     if (this.state.players[index].score === 0 && delta === -.5) {

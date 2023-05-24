@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Stats from './Stats';
 import Timer from './Timer';
 
@@ -32,6 +33,15 @@ const Header = ({Players, title}) => {
             <Timer />
         </header>
     );
+}
+
+Header.propTypes = {
+    Players: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string,
+};
+
+Header.defaultProps = {
+    title: 'titel'
 }
 
 export default Header;
