@@ -29,9 +29,14 @@ class App extends Component {
                 name: 'pat',
                 score: 0,
             },
-        ]
+        ],
+        hasError: false
     };
 
+
+    componentDidCatch() {
+        this.setState({hasError: true});
+    }
     // lastPlayerID = 4;
     lastPlayerID = this.state.players.length;
 
@@ -101,28 +106,32 @@ class App extends Component {
     }
 
     render(){
-        return(
-          <section className='flex content-center w-full justify-center m-auto text-slate-100'>
-            <div className="counter bg-emerald-500 w-4/5 rounded-lg mt-3">
-                <Header title='Scoreboard' Players={this.state.players}/>
-                {/* players list */}
-                {
-                    this.state.players.map( (player, index) =>
-                    <Player 
-                    id={player.id}
-                    pName={player.name}
-                    score={player.score}
-                    key={player.id.toString()}
-                    index={index}
-                    changeScore={this.handleScoreChange}
-                    removePlayer={this.handleRemovePlayer}
-                    /> 
-                    )
-                }
-                <AddPlayer addPlayer={this.handleAddPlayer}/>
-            </div>
-          </section>
-        );
+        if(this.state.hasError){
+            return <h1>Problema mo!!?!</h1>
+        }else{
+            return(
+                <section className='flex content-center w-full justify-center m-auto text-slate-100'>
+                  <div className="counter bg-emerald-500 w-4/5 rounded-lg mt-3">
+                      <Header title='Scoreboard' Players={this.state.players}/>
+                      {/* players list */}
+                      {
+                          this.state.players.map( (player, index) =>
+                          <Player 
+                          id={player.id}
+                          pName={player.name}
+                          score={player.score}
+                          key={player.id.toString()}
+                          index={index}
+                          changeScore={this.handleScoreChange}
+                          removePlayer={this.handleRemovePlayer}
+                          /> 
+                          )
+                      }
+                      <AddPlayer addPlayer={this.handleAddPlayer}/>
+                  </div>
+                </section>
+              );
+        }
     }
 }
 
