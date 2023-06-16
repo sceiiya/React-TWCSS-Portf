@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Name = () => {
+const Interests = () => {
     return(
         <>
         </>
     )
 }
 
-export default Name
+export default Interests

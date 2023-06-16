@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Name = () => {
+const ConnectWith = () => {
     return(
         <>
         </>
     )
 }
 
-export default Name
+export default ConnectWith
