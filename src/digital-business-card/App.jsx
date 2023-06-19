@@ -1,11 +1,7 @@
 import React from 'react'
-import Profile from './components/Profile'
-import Name from './components/Name'
-import Profession from './components/Profession'
-import ContactWith from './components/ContactWith'
+import CardHeader from './components/CardHeader'
+import CardBody from './components/CardBody'
 import ConnectWith from './components/ConnectWith'
-import AboutMe from './components/AboutMe'
-import Interests from './components/Interests'
 
 //profile pic
 //Name
@@ -21,14 +17,10 @@ function App1() {
 
   return (
     <>
-      <section className='w-full bg-gray-950 m-0 top-0'>
-        <div className='m-4 bg-black'>
-          <Profile />
-          <Name />
-          <Profession />
-          <ContactWith />
-          <AboutMe />
-          <Interests />
+      <section className='w-full bg-cyan-900 m-0 top-0'>
+        <div className='m-4 bg-cyan-600'>
+          <CardHeader />
+          <CardBody />
           <ConnectWith />
         </div>
       </section>
