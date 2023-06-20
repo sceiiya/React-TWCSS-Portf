@@ -5,7 +5,7 @@ const Profile = () => {
     return(
         <>
         <div className='p-3'>
-            <img src={profilepic} alt="" width={'100%'} className='rounded-md' />
+            <img src={profilepic} alt="" className='rounded-md w-1/2 max-xs:w-full' />
         </div>
         </>
     )

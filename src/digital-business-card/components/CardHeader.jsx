@@ -5,12 +5,16 @@ import Profession from "./Profession";
 import ContactWith from "./ContactWith";
 
 const CardHeader = () => {
-    <span>
-        <Profile />
-        <Name />
-        <Profession />
-        <ContactWith />
-    </span>
+    return(
+        <span className='flex flex-row max-xs:flex-col'>
+            <Profile />
+            <div>
+            <Name />
+            <Profession />
+            <ContactWith />
+            </div>
+        </span>
+    )    
 }
 
 export default CardHeader;
