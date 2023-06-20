@@ -17,8 +17,8 @@ function App1() {
 
   return (
     <>
-      <section className='w-full bg-cyan-900 m-0 top-0'>
-        <div className='m-4 bg-cyan-600'>
+      <section className='w-full bg-emerald-900 m-0 top-0'>
+        <div className='m-4 bg-emerald-600'>
           <CardHeader />
           <CardBody />
           <ConnectWith />

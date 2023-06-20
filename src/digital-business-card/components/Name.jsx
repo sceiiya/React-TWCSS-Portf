@@ -3,7 +3,7 @@ import React from 'react'
 const Name = () => {
     return(
         <>
-            <span>
+            <span className='flex m-1 text-center items-center justify-center text-white font-medium text-lg'>
                 Scheidj Bleu Villados
             </span>
         </>

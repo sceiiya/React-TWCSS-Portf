@@ -6,7 +6,7 @@ import ContactWith from "./ContactWith";
 
 const CardHeader = () => {
     return(
-        <span className='flex flex-row max-xs:flex-col'>
+        <span className='flex flex-row max-sm:flex-col'>
             <Profile />
             <div>
             <Name />
