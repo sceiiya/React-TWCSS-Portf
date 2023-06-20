@@ -1,8 +1,8 @@
 import React from "react";
-import Profile from "./Profile";
-import Name from "./Name";
-import Profession from "./Profession";
-import ContactWith from "./ContactWith";
+import Profile from "./header/Profile";
+import Name from "./header/Name";
+import Profession from "./header/Profession";
+import ContactWith from "./header/ContactWith";
 
 const CardHeader = () => {
     return(

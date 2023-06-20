@@ -1,6 +1,6 @@
 import React from "react";
-import AboutMe from "./AboutMe";
-import Interests from "./Interests";
+import AboutMe from "./body/AboutMe";
+import Interests from "./body/Interests";
 
 const CardBody = () => {
     return(
