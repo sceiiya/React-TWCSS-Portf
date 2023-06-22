@@ -8,7 +8,7 @@ const CardHeader = () => {
     return(
         <span className='flex flex-row max-sm:flex-col'>
             <Profile />
-            <div>
+            <div className="w-full">
             <Name />
             <Profession />
             <ContactWith />
