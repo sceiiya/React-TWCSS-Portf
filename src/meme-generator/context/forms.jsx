@@ -139,10 +139,13 @@ export default function Form() {
 
             <br />
             <br />
+
             {/* for normal since meron nama na onSubmit sa taas */}
             <button>Submit</button>
+
             {/* for defaultingf naman na button like this */}
             <button type="button">Submit</button>
+            
             {/* or */}
             <input type="submit" />
         </form>
