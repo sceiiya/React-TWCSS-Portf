@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import './App.css';
 import sample from '../../src/digital-business-card/assets/images/profile.jpg'
 import Image from './components/Image';
+import Inputs from './components/Inputs';
 // import memesData from './context/memesData';
     //two types of state
     //Application State //resusable for its children components
@@ -40,8 +41,10 @@ const App = () => {
         return () => {
             //some code for clean up function
         }
-    }, [])
+    }, []);
     
+    //check the game project how to import contexts as state
+    // import { MemeData, setMemeData } from './context/memeState';
     const [MemeData, setMemeData] = useState(memeData);
     const {topText, bottomText, randomImage} = MemeData;
     // console.log(MemeData)
@@ -85,22 +88,10 @@ const App = () => {
         </header>      
         
         <main className='p-6 px-48 max-md:px-24 max-sm:px-8'>
-            <div className='grid grid-rows-2 gap-4'>
-                <span className='flex flex-row justify-evenly gap-3'>
-                    <input type="text" placeholder='Top Text'
-                    name='topText'
-                    maxLength='35'
-                    onChange={handleChange}
-                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'/>
-                    <input type="text" placeholder='Bottom Text'
-                    name='bottomText'
-                    maxLength='35'
-                    onChange={handleChange}
-                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'/>
-                </span>
-                <button onClick={handleNewMemeImage} className='mx-auto w-full bg-emerald-300 font-bold text-lg text-white p-2 rounded-md'>Generate Random Meme Image</button>
-                {/* type='submit' */}
-            </div>
+            <Inputs
+                handleChange={handleChange}
+                handleNewMemeImage={handleNewMemeImage}
+            />
             <Image 
                 randomImage={randomImage}
                 topText={topText} 
