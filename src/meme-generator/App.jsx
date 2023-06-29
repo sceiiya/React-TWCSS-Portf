@@ -21,27 +21,27 @@ const App = () => {
 
 
     // using fetch in a use effect
-    // useEffect( () => {
-    //     fetch('https://api.imgflip.com/get_memes')
-    //     .then(data => data.json())
-    //     .then(data => setMemesArr(data.data.memes))
-    // }, []);
+    useEffect( () => {
+        fetch('https://api.imgflip.com/get_memes')
+        .then(data => data.json())
+        .then(data => setMemesArr(data.data.memes))
+    }, []);
 
     //using async func in a fetch use effect
-    React.useEffect(() => {
-        async function getMemes() {
-            const res = await fetch("https://api.imgflip.com/get_memes")
-            const data = await res.json()
-            setMemesArr(data.data.memes)
+    // React.useEffect(() => {
+    //     async function getMemes() {
+    //         const res = await fetch("https://api.imgflip.com/get_memes")
+    //         const data = await res.json()
+    //         setMemesArr(data.data.memes)
             
-        }
-        getMemes()
+    //     }
+    //     getMemes()
         
-        // note: useeffect return expect a function as a return for clean up function
-        return () => {
-            //some code for clean up function
-        }
-    }, []);
+    //     // note: useeffect return expect a function as a return for clean up function
+    //     return () => {
+    //         //some code for clean up function
+    //     }
+    // }, []);
     
     //check the game project how to import contexts as state
     // import { MemeData, setMemeData } from './context/memeState';
