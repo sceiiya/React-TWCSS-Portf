@@ -17,12 +17,13 @@ export default function App() {
     
     React.useEffect(function() {
         console.log("Effect ran")
-        fetch("https://swapi.dev/api/people/1")
+        fetch(`https://swapi.dev/api/people/${count}`)
             .then(res => res.json())
             .then(data => setStarWarsData(data))
-    }, [])
+    }, [count])
     // if the dependencies array is empty, it will only run once or every first render of the component
 
+    
 
     return (
         <div>
