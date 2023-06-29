@@ -37,6 +37,15 @@ const App = () => {
         })  )
         // console.log(newMemeImg());
     }
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setMemeData( prevMemeData => ({
+            ...prevMemeData,
+            [name] : value
+        })  )
+        // console.log(newMemeImg());
+    }
     
     return(
         <>
@@ -51,14 +60,22 @@ const App = () => {
         <main className='p-6 px-48 max-md:px-24 max-sm:px-8'>
             <div className='grid grid-rows-2 gap-4'>
                 <span className='flex flex-row justify-evenly gap-3'>
-                    <input type="text" placeholder='Top Text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'/>
-                    <input type="text" placeholder='Bottom Text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'/>
+                    <input type="text" placeholder='Top Text'
+                    name='topText'
+                    onChange={handleChange}
+                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'/>
+                    <input type="text" placeholder='Bottom Text'
+                    name='bottomText'
+                    onChange={handleChange}
+                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'/>
                 </span>
                 <button onClick={handleNewMemeImage} className='mx-auto w-full bg-emerald-300 font-bold text-lg text-white p-2 rounded-md'>Generate Random Meme Image</button>
                 {/* type='submit' */}
             </div>
-            <div className='w-full'>
+            <div className='w-full relative'>
                 <img src={randomImage} alt="" className='content-center w-full max-h-96 object-contain bg-slate-100'/>
+                <h2 className="top-0 absolute uppercase text-center m-4 text-white text-4xl font-extrabold drop-shadow-lg shadow-black left-1/2 -translate-x-1/2">{topText}</h2>
+                <h2 className="bottom-0 absolute uppercase text-center m-4 text-white text-4xl font-extrabold drop-shadow-lg shadow-black left-1/2 -translate-x-1/2">{bottomText}</h2>
             </div>
         </main>
         </>
