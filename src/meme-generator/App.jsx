@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import './App.css';
 import sample from '../../src/digital-business-card/assets/images/profile.jpg'
+import Image from './components/Image';
 // import memesData from './context/memesData';
     //two types of state
     //Application State //resusable for its children components
@@ -100,11 +101,12 @@ const App = () => {
                 <button onClick={handleNewMemeImage} className='mx-auto w-full bg-emerald-300 font-bold text-lg text-white p-2 rounded-md'>Generate Random Meme Image</button>
                 {/* type='submit' */}
             </div>
-            <div className='w-full relative'>
-                <img src={randomImage} alt="" className='content-center w-full max-h-96 object-contain bg-slate-100'/>
-                <h2 className="top-0 absolute uppercase text-center m-4 text-white text-4xl font-extrabold drop-shadow-lg shadow-black left-1/2 -translate-x-1/2">{topText}</h2>
-                <h2 className="bottom-0 absolute uppercase text-center m-4 text-white text-4xl font-extrabold drop-shadow-lg shadow-black left-1/2 -translate-x-1/2">{bottomText}</h2>
-            </div>
+            <Image 
+                randomImage={randomImage}
+                topText={topText} 
+                bottomText={bottomText}
+            />
+            {/* IMAGE */}
         </main>
         </>
         )
