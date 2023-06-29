@@ -1,7 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './App.css';
 import sample from '../../src/digital-business-card/assets/images/profile.jpg'
-import memesData from './context/memesData';
+// import memesData from './context/memesData';
     //two types of state
     //Application State //resusable for its children components
     //Component State //local component state
@@ -13,8 +13,18 @@ const App = () => {
         randomImage: 'http://i.imgflip.com/1bij.jpg' 
     };
 
-    const memesRawArr = memesData.data.memes;
-    const [memesArr, setMemesArr] = useState(memesRawArr);
+    // let memesRawArr = [];
+    // const [memesRawArr, setMemesRawArr] = useState([]);
+    const [memesArr, setMemesArr] = useState([]);
+
+
+
+    useEffect( () => {
+        fetch('https://api.imgflip.com/get_memes')
+        .then(data => data.json())
+        .then(data => setMemesArr(data.data.memes))
+    }, []);
+    
     const [MemeData, setMemeData] = useState(memeData);
     const {topText, bottomText, randomImage} = MemeData;
     // console.log(MemeData)
