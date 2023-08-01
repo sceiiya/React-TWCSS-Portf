@@ -50,7 +50,21 @@ const linkThree = [
 ]
 
 const linkFour = [
-''
+'https://www.brainfacts.org/',
+'https://www.amazon.com/gp/product/039916524X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=039916524X&linkCode=as2&tag=learningho0a9-20&linkId=PATIFVORJZ7ERHSC',
+'https://docs.google.com/spreadsheets/d/1f1m8gZeQr3Obif6cNcDExWXcoMsJQd9H/edit?fbclid=IwAR2zN9Tsiq2jOXBe2UI0ddQfiDbZYPMbR0XJU0_eZZxkpAGsTIqija8dzjg#gid=1973169494',
+'https://eclectustech.net/contact-us/',
+'https://eclectustech.net/?fbclid=IwAR2Q9GXPpo944vo-KRKCTqEdHfSIEtmF4hl4mBoGzV-pGwhLzMsRQw06z80',
+'https://www.facebook.com/groups/685104802630658/?multi_permalinks=1001082937699508&ref=share',
+'https://www.facebook.com/Tonybaradi?comment_id=Y29tbWVudDoyNTA4NTgxOTE1OTY4MjYxXzE3NjU0ODQwMTk5MDEyMw%3D%3D',
+'https://www.facebook.com/business/help/283579896000936',
+'https://www.ciit.edu.ph/spec-lp-python/?utm_source=Paid+Social&utm_medium=fbads&utm_campaign=%5BEM%5D+NEW+SPEC+-+CV&utm_term=SPEC+%28QC%2BAL%29+-+Python&utm_content=Image%3A+Python+%2807%2F22%2F23%29+-+SU+-+CV&fbclid=IwAR2WeT-N3ictjkP1xgDpu3mHTcwb6sJz8HCNufPwGlC5fonNLgppUSKguSo',
+'https://www.youtube.com/watch?v=hI9fjymKFlM&loop=0',
+'https://www.youtube.com/watch?v=CnlMTBwsBHs&list=PLBNjcEBA4UkvGLcs8IX0OZ0NkzfIntvJi',
+'https://www.youtube.com/shorts/jK_wuq8sxL4',
+'https://www.youtube.com/shorts/X5y7dTE2eHM',
+'https://www.youtube.com/watch?v=ANkxRGvl1VY',
+
 ]
 
 const html = links.map( link => `<a href="${link}">${link}</a><br/>`)
