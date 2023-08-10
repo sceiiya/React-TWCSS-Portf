@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Player from './components/Player';
 import AddPlayer from './components/AddForm';
-class App extends Component {
+class ScoreboardApp extends Component {
 
     //two types of state
     //Application State //resusable for its children components
@@ -135,4 +135,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default ScoreboardApp;

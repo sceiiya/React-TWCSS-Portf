@@ -8,7 +8,7 @@ import Inputs from './components/Inputs';
     //Application State //resusable for its children components
     //Component State //local component state
 
-const App = () => {
+const MemeApp = () => {
     const memeData = {
         topText: '',
         bottomText: '',
@@ -105,4 +105,4 @@ const App = () => {
         )
 }
 
-export default App;
+export default MemeApp;
