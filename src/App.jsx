@@ -9,22 +9,9 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Navigate to="/scoreboard" />} />
-      {/* <Route path='/home' element={<ScoreboardApp />} /> */}
-      <Route path='/scoreboard/' element={<ScoreboardApp />} />
-      <Route path='/scoreboard2/' element={<ScoreContxApp />} />
-
-      <Route path='/meme-generator' element={<Navigate to="/meme-generator/" />} />
-      <Route path='/meme-generator/' element={<MemeApp />} />
-
-      {/* <Route 
-        path='/' 
-        element={<DefaultLayout />} 
-        children=
-        {[
-            <Route path='/login' element={<Login />} />,
-            <Route path='/signup' element={<Signup />} />
-        ]}
-      /> */}
+      <Route path='/scoreboard' element={<ScoreboardApp />} />
+      <Route path='/scoreboard2' element={<ScoreContxApp />} />
+      <Route path='/meme-generator' element={<MemeApp />} />
     </Routes>
   )
 }
