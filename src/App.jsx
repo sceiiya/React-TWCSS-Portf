@@ -12,6 +12,8 @@ function App() {
       {/* <Route path='/home' element={<ScoreboardApp />} /> */}
       <Route path='/scoreboard/' element={<ScoreboardApp />} />
       <Route path='/scoreboard2/' element={<ScoreContxApp />} />
+
+      <Route path='/meme-generator' element={<Navigate to="/meme-generator/" />} />
       <Route path='/meme-generator/' element={<MemeApp />} />
 
       {/* <Route 
