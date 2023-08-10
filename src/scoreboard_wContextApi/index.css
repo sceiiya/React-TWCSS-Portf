@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,4 +8,4 @@
 
 .asdw{
   @apply w-full px-4 py-2 bg-blue-400 hover:bg-blue-800 focus:bg-slate-500 text-white rounded-md shadow-md focus:outline-double
-}
+} */
