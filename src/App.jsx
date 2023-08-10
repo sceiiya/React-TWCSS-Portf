@@ -10,9 +10,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Navigate to="/scoreboard" />} />
       {/* <Route path='/home' element={<ScoreboardApp />} /> */}
-      <Route path='/scoreboard' element={<ScoreboardApp />} />
-      <Route path='/scoreboard2' element={<ScoreContxApp />} />
-      <Route path='/meme-generator' element={<MemeApp />} />
+      <Route path='/scoreboard/' element={<ScoreboardApp />} />
+      <Route path='/scoreboard2/' element={<ScoreContxApp />} />
+      <Route path='/meme-generator/' element={<MemeApp />} />
 
       {/* <Route 
         path='/' 
