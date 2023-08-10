@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import './App.css';
-import sample from '../../src/digital-business-card/assets/images/profile.jpg'
+import sample from '../../src/meme-generator/assets/images/Meme-Faces-PNG.png'
 import Image from './components/Image';
 import Inputs from './components/Inputs';
 // import memesData from './context/memesData';
@@ -80,9 +80,11 @@ const App = () => {
     return(
         <>
         <header className='h-16 bg-emerald-400 flex flex-row'>
-            <img src={sample} alt="" className='mx-8 my-1' />
+            <a href="https://www.pngmart.com/image/514243" className='flex items-center mx-8 my-1' target="_blank">
+                <img src={sample} alt="" className='w-12' />
+            </a>
             <span className='w-full justify-between flex flex-row'>
-                <p className='text-center my-auto relative text-white font-semibold text-xl'>Generate Meme</p>
+                <p className='text-center my-auto relative text-white font-semibold text-xl'>Meme Generator</p>
                 <p className='text-center my-auto relative right-3 text-white font-medium text-lg'>Mini React Project</p>
             </span>
         </header>      

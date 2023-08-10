@@ -1,5 +1,3 @@
-import React from "react";
-
 const Inputs = ({handleChange, handleNewMemeImage}) => {
     return(
         <div className='grid grid-rows-2 gap-4'>

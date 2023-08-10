@@ -11,7 +11,6 @@ const links = [
 'https://www.youtube.com/watch?v=b3TOVBNSJDA',
 'file:///C:/Users/meets/Downloads/FREE-Discovery-Call-Script-by-Shan-Ty.pdf',
 'https://twitter.com/felutiahime',
-'https://www.youtube.com/watch?v=lVpLoUecZYY&t=121s',
 'https://answerthepublic.com/',
 'https://frontendmasters.com/courses/modern-seo/',
 'https://stefantopalovicdev.vercel.app/'
